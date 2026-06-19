@@ -26,6 +26,7 @@ properties:
 ```terraform
 module "smart_iam" {
   source = "git::https://codeberg.org/nietarne/terraform-azure-smart-iam"
+  # if you want to pin a version / commit: add "?rev={tag or commit sha-1}"
 
   role_assignments = [
     {
@@ -80,6 +81,7 @@ Add the module:
 ```terraform
 module "smart_iam" {
   source = "git::https://codeberg.org/nietarne/terraform-azure-smart-iam"
+  # if you want to pin a version / commit: add "?rev={tag or commit sha-1}"
 
   role_assignments = var.role_assignments
 }
