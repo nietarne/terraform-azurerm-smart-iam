@@ -25,7 +25,7 @@ properties:
 ### Configure in `.tf`
 ```terraform
 module "smart_iam" {
-  source = "git:codeberg.org/nietarne/terraform-azure-smart-iam"
+  source = "git::https://codeberg.org/nietarne/terraform-azure-smart-iam"
 
   role_assignments = [
     {
@@ -79,7 +79,7 @@ variable "role_assignments" {
 Add the module:
 ```terraform
 module "smart_iam" {
-  source = "git:codeberg.org/nietarne/terraform-azure-smart-iam"
+  source = "git::https://codeberg.org/nietarne/terraform-azure-smart-iam"
 
   role_assignments = var.role_assignments
 }
