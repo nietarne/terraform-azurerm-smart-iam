@@ -61,7 +61,10 @@ variable "role_assignments" {
   validation {
     condition = alltrue([
       for ra in var.role_assignments :
-      contains(["Security Group", "Service Principal"], ra.principal.type)
+      contains(
+        ["security_group", "service_principal"],
+        lower(replace(ra.principal.type, " ", "_"))
+      )
     ])
     error_message = "principal.type must be 'Security Group' or 'Service Principal'."
   }
